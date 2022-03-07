@@ -14,7 +14,7 @@ defmodule Hangman.Impl.Game do
     turns_left: 7,
     game_state: :initializing,
     letters: [],
-    used: MapSet.new(),
+    used: MapSet.new()
   )
 
   ############################################################
@@ -85,10 +85,18 @@ defmodule Hangman.Impl.Game do
     { game, tally(game) }
   end
 
+  ############################################################
+
+  defp reveal_guessed_letters(game = %{ game_state: :lost }) do
+    game.letters
+  end
+
   defp reveal_guessed_letters(game) do
     game.letters
     |> Enum.map(fn letter -> MapSet.member?(game.used, letter) |> maybe_reveal(letter) end)
   end
+
+  ############################################################
 
   defp maybe_reveal(true, letter), do: letter
   defp maybe_reveal(false, _letter), do: "_"

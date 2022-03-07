@@ -1,3 +1,0 @@
-defmodule DictionaryTest do
-
-end

@@ -27,8 +27,7 @@ defmodule TextClient.Impl.Player do
     # Accepts state, gives feedback, displays the current word, gets the next guess, makes a move, then recurse
     tally |> feedback_for() |> IO.puts()
     tally |> current_word() |> IO.puts()
-    guess = get_guess()
-    Hangman.make_move(game, guess) |> interact()
+    Hangman.make_move(game, get_guess()) |> interact()
   end
 
   #####################################################################
