@@ -2,7 +2,9 @@
              [{applications,[kernel,stdlib,elixir,logger,dictionary]},
               {description,"hangman"},
               {modules,['Elixir.Hangman','Elixir.Hangman.Impl.Game',
+                        'Elixir.Hangman.Runtime.Application',
                         'Elixir.Hangman.Runtime.Server',
                         'Elixir.Hangman.Type']},
               {registered,[]},
-              {vsn,"0.1.0"}]}.
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Hangman.Runtime.Application',[]}}]}.
